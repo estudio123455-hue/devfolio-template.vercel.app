@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { theme, personal, navigation, showExperience } from './data/portfolio';
+import { theme, personal, navigation, showExperience, purchase } from './data/portfolio';
 import Hero from './components/Hero';
 import About from './components/About';
 import Projects from './components/Projects';
@@ -8,9 +8,12 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Navigation from './components/Navigation';
 import ThemeToggle from './components/ThemeToggle';
+import PromoBanner from './components/PromoBanner';
+import FloatingCTA from './components/FloatingCTA';
 
 function App() {
   const [darkMode, setDarkMode] = useState(theme.darkModeDefault);
+  const hasBanner = !!purchase.payhipUrl;
 
   // Apply dark mode class to html element
   useEffect(() => {
@@ -35,14 +38,17 @@ function App() {
 
   return (
     <div className={`min-h-screen bg-gray-50 dark:bg-gray-950 transition-colors duration-300`} style={{ fontFamily: theme.fontFamily }}>
+      {/* Promo Banner */}
+      <PromoBanner />
+      
       {/* Navigation */}
-      <Navigation navigation={navigation} />
+      <Navigation navigation={navigation} hasBanner={hasBanner} />
       
       {/* Theme Toggle */}
       <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
       
       {/* Hero Section */}
-      <Hero />
+      <Hero hasBanner={hasBanner} />
       
       {/* About Section */}
       <About />
@@ -58,6 +64,9 @@ function App() {
       
       {/* Footer */}
       <Footer />
+      
+      {/* Floating CTA */}
+      <FloatingCTA />
     </div>
   );
 }

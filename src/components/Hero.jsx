@@ -6,7 +6,7 @@ import { Github, Linkedin, Twitter, Mail, ArrowRight } from 'lucide-react';
  * Main landing section with name, title, tagline, and CTA
  * Includes social links and primary call-to-action buttons
  */
-export default function Hero() {
+export default function Hero({ hasBanner = false }) {
   const colorClasses = {
     blue: 'text-blue-600 dark:text-blue-400',
     purple: 'text-purple-600 dark:text-purple-400',
@@ -31,7 +31,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16"
+      className={`min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 ${hasBanner ? 'pt-20 sm:pt-16' : 'pt-16'}`}
     >
       <div className="max-w-4xl mx-auto text-center">
         {/* Greeting */}

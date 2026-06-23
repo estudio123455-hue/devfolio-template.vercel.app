@@ -8,6 +8,21 @@
  */
 
 // ============================================
+// PURCHASE SETTINGS (for demo/sales page)
+// ============================================
+export const purchase = {
+  // Payhip purchase URL for selling this template
+  // Set to null to hide all purchase CTAs (when using as personal portfolio)
+  payhipUrl: 'https://payhip.com/b/t1VUk',
+  
+  // Price to display in CTAs
+  price: '$12',
+  
+  // Product name for CTAs
+  productName: 'DevFolio',
+};
+
+// ============================================
 // THEME SETTINGS
 // ============================================
 export const theme = {
