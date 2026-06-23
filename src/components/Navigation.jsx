@@ -6,7 +6,7 @@ import { Menu, X } from 'lucide-react';
  * Fixed header with smooth scroll links to sections
  * Responsive: hamburger menu on mobile, horizontal links on desktop
  */
-export default function Navigation({ navigation, hasBanner = false }) {
+export default function Navigation({ navigation }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -26,11 +26,11 @@ export default function Navigation({ navigation, hasBanner = false }) {
 
   return (
     <nav
-      className={`fixed left-0 right-0 z-40 transition-all duration-300 ${
+      className={`sticky top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled
           ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-md'
           : 'bg-transparent'
-      } ${hasBanner ? 'top-14 sm:top-12' : 'top-0'}`}
+      }`}
       aria-label="Main navigation"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

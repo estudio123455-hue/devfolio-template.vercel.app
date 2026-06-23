@@ -43,7 +43,7 @@ export default function PromoBanner() {
   const accentGradient = accentClasses[theme.accentColor] || accentClasses.purple;
 
   return (
-    <div className={`fixed top-0 left-0 right-0 z-50 bg-gradient-to-r ${accentGradient} shadow-lg`}>
+    <div className={`bg-gradient-to-r ${accentGradient} shadow-lg`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-3">
           {/* Banner Content */}

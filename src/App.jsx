@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { theme, personal, navigation, showExperience, purchase } from './data/portfolio';
+import { theme, personal, navigation, showExperience } from './data/portfolio';
 import Hero from './components/Hero';
 import About from './components/About';
 import Projects from './components/Projects';
@@ -13,7 +13,6 @@ import FloatingCTA from './components/FloatingCTA';
 
 function App() {
   const [darkMode, setDarkMode] = useState(theme.darkModeDefault);
-  const hasBanner = !!purchase.payhipUrl;
 
   // Apply dark mode class to html element
   useEffect(() => {
@@ -42,13 +41,13 @@ function App() {
       <PromoBanner />
       
       {/* Navigation */}
-      <Navigation navigation={navigation} hasBanner={hasBanner} />
+      <Navigation navigation={navigation} />
       
       {/* Theme Toggle */}
       <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
       
       {/* Hero Section */}
-      <Hero hasBanner={hasBanner} />
+      <Hero />
       
       {/* About Section */}
       <About />
